@@ -14,7 +14,8 @@
 ## postsテーブル
 |Column|Type|Option|
 |------|----|------|
-|name|string|null: false, add_index: true|
+|game_name|string|null: false, add_index: true|
+|game_hard|string|null: false, add_index: true|
 |title|string||
 |text|text|null:false|
 |image|string||
