@@ -14,12 +14,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    float: left;
     height: 100vh;
+    &::after {
+      content:"";
+      display:block;
+      width: 29.5%;
+      height:0;
+    }
     .Main-post {
-      background-color: lightseagreen;
       width: 250px;
-      height: 340px;
+      height: 330px;
       margin-top: 60px;
       &__image {
         background-color: lightpink;
