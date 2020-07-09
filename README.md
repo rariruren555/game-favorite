@@ -1,24 +1,44 @@
-# README
+# GameFavorite DB設計
+## usersテーブル
+|Column|Type|Option|
+|------|----|------|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|name|string|null: false|
+### Association
+- has_many :posts
+- has_many :likes
+- has_many :liked_posts, through: :likes, source: :post
+- has_many :comments
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## postsテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false, add_index: true|
+|title|string||
+|text|text|null:false|
+|image|string||
+### Association
+- belongs_to :user
+- has_many :likes
+- has_many :liked_users, through: :likes, source: :user
+- has_many :comments
 
-Things you may want to cover:
+## commentsテーブル
+|Column|Type|Option|
+|------|----|------|
+|user|integer|references|null: false, foreign_key: true|
+|post|integer|references|null: false, foreign_key: true|
+|text|text||
+### Association
+- belongs_to :user
+- belongs_to :post
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## likesテーブル
+|Column|Type|Option|
+|------|----|------|
+|user|integer|references|null: false, foreign_key: true|
+|post|integer|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :post
