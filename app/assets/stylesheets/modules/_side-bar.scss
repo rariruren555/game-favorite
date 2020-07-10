@@ -13,10 +13,15 @@
     flex-direction: column;
     align-items: center;
     &__icon {
-      font-size: 30px;
+      font-size: 40px;
+      .items-btn {
+        color: #444444	;
+      }
     }
     &__name{
       font-size: 12px;
+      font-weight: bold;
+      color: #444444;
     }
   }
 }
