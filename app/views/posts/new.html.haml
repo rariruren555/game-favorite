@@ -1,0 +1,36 @@
+.Post-page
+  .Post-page__top
+    .Post-page__bar
+    .Post-page__top__left
+      <投稿ページ>
+      .Image-box
+        <画像>
+        .Image-box__icon
+          =link_to new_post_path, class: "items-btn" do
+            = icon('far', 'image', class: "items-btn--icon")
+    .Post-page__top__right
+      .Game-title
+        <ゲームタイトル>
+        %input.Game-title__Title{"placeholder": "タイトル名", "type": "text"}
+      .Game-hard
+        <ゲームハード>
+        %input.Game-hard__Hard{"placeholder": "ハード名", "type": "text"}
+      .Evaluation
+        <評価>
+        %select{name: "evaluation"}
+          %option{value: "0"} 1
+          %option{value: "1"} 2
+          %option{value: "2"} 3
+          %option{value: "3"} 4
+          %option{value: "4"} 5
+    .Post-page__bar
+
+  .Post-page__bottom
+    %form.Form__contents
+      .Form__contents__title
+        <見出し>
+        %textarea.titleText{"placeholder": "title", "type": "text"}
+      .Form__contents__text
+        <本文>
+        %textarea.textArea{"placeholder": "text", "type": "text"}
+      %input.submitBtn{"name": "commit", "type": "submit", "value": "送信"}
