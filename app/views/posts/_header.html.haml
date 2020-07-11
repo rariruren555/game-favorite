@@ -1,0 +1,10 @@
+.Header
+  .Header-logo
+    = link_to "Game Favorite", posts_index_path
+  .Search
+    %form.Search__contents
+      %input.inputText{"placeholder": "投稿を検索する", "type": "text"}
+      %input.submitBtn{"name": "commit", "type": "submit", "value": "検索🔍"}
+  .Header-user
+    = link_to "ログイン", new_user_session_path, class: 'btn'
+    = link_to "新規登録", new_user_registration_path, class: 'btn'
