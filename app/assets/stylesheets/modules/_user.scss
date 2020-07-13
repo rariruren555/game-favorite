@@ -1,1 +1,9 @@
 /*deviseの新規登録など*/
+.Devise-main {
+  width: 100vw;
+  height: 100vh;
+  &__contents {
+    width: 100vw;
+    height: 100vh;
+  }
+}
