@@ -1,110 +1,124 @@
 /*post#new*/
 .Post-page {
-  background-color: #FFFFEE;
+  background-color: #FFFFDD;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   margin-top: 70px;
-  padding-bottom: 10px;
-  &__bar {
-    background-color: #FFFFDD;
-    width: 30%;
-    height: 100vh;
-  }
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    width: 100vw;
-    height: 50%;
-    font-weight: bold;
-    &__left {
-      height: 100%;
-      width: 40%;
-      margin-left: 50px;
-      font-size: 25px;
-      .Image-box {
-        padding: 15px 10px;
-        margin-right: 20px;
-        font-size: 17px;
-        height: 300px;
-        border: 1px solid lightgray;
-        &__icon {
-          font-size: 40px;
-          margin-top: 50px;
-          padding: 3px;
-          height: 70px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          .items-btn {
-            color: #444444	;
+  &__contents {
+    background-color: #FFFFEE;
+    margin: 0 20%;
+    height: 100%;
+    padding-bottom: 10px;
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50%;
+      font-weight: bold;
+      margin-bottom: 10px;
+      &__left {
+        height: 100%;
+        width: 40%;
+        margin-left: 50px;
+        font-size: 25px;
+        .Image-box {
+          padding: 15px 10px;
+          margin-right: 20px;
+          font-size: 17px;
+          height: 300px;
+          border: 1px solid lightgray;
+          &__icon {
+            font-size: 40px;
+            margin-top: 50px;
+            padding: 3px;
+            height: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .items-btn {
+              color: #444444	;
+            }
           }
         }
       }
+      &__right {
+        height: 100%;
+        width: 40%;
+        margin-right: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .Game-title {
+          display: flex;
+          flex-direction: column;
+          padding: 5px;
+          margin-top: 50px;
+          &__Title{
+            padding: 0 5px;
+          }
+        }
+        .Game-hard {
+          display: flex;
+          flex-direction: column;
+          padding: 5px;
+          margin: 30px 0;
+          &__Hard{
+            padding: 0 5px;
+          }
+        }
+        .Evaluation {
+          width: 70px;
+          display: flex;
+          flex-direction: column;
+          padding: 5px;
+          margin-bottom: 30px;
+        }
+      }
     }
-    &__right {
-      height: 100%;
-      width: 40%;
-      margin-right: 50px;
+    &__bottom {
+      width: 100%;
+      height: 50%;
+      padding-bottom: 10px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      .Game-title {
+      align-items: center;
+      .Form__contents {
         display: flex;
         flex-direction: column;
-        padding: 5px;
-        margin-top: 50px;
-        &__Title{
-          padding: 0 5px;
+        justify-content: space-around; 
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 0 15%;
+        &__title {
+          display: flex;
+          flex-direction: column;
+          font-size: 20px;
+          font-weight: bold;
         }
-      }
-      .Game-hard {
-        display: flex;
-        flex-direction: column;
-        padding: 5px;
-        &__Hard{
-          padding: 0 5px;
-        }
-      }
-      .Evaluation {
-        display: flex;
-        flex-direction: column;
-        padding: 5px;
-        margin: 0 200px 30px 0;
-      }
-    }
-  }
-  &__bottom {
-    width: 100%;
-    height: 50%;
-    padding: 0 200px;
-    .Form__contents {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around; 
-      font-weight: bold;
-      height: 100%;
-      &__title {
-        display: flex;
-        flex-direction: column;
-        font-size: 20px;
-        margin: 0 150px;
         .titleText {
           height: 70px;
+          width: 100%;
           padding: 5px 10px;
+          margin-bottom: 10px;
         }
-      }
-      &__text {
-        display: flex;
-        flex-direction: column;
-        font-size: 20px;
-        margin: 0 150px;
+        &__text {
+          display: flex;
+          flex-direction: column;
+          font-size: 20px;
+          font-weight: bold;
+        }
         .textArea {
           height: 180px;
           padding: 5px 10px;
+          width: 100%;
+          margin-bottom: 10px;
         }
-      }
-      .submitBtn {
-        margin: 10px 300px 0;
+        .submitBtn {
+          width: 80px;
+          font-weight: bold;
+        }
       }
     }
   }

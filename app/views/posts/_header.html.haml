@@ -1,0 +1,15 @@
+.Header
+  .Header-logo
+    = link_to "Game Favorite", posts_index_path
+  .Search
+    %form.Search__contents
+      %input.inputText{"placeholder": "投稿を検索する", "type": "text"}
+      %input.submitBtn{"name": "commit", "type": "submit", "value": "検索 🔍"}
+  - if user_signed_in?
+    .Header-user
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+      = link_to "投稿する", new_post_path, class: 'btn'
+  - else
+    .Header-user
+      = link_to "ログイン", new_user_session_path, class: 'btn'
+      = link_to "新規登録", new_user_registration_path, class: 'btn'
