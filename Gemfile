@@ -58,3 +58,5 @@ gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'font-awesome-sass','~> 5.8.1'
 
 gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'

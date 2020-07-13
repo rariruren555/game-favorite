@@ -1,17 +1,25 @@
-%h2 ログイン
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :メールアドレス
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :パスワード
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "ログイン"
-/= render "devise/shared/links"
+.Header
+  .Header-logo
+    = link_to "Game Favorite", posts_index_path
+  .Header-user
+    = link_to "ログイン", new_user_session_path, class: 'btn'
+    = link_to "新規登録", new_user_registration_path, class: 'btn'
+.Devise-main
+  .Devise-main__contents
+    %h1 〜 ログイン 〜
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :メールアドレス, class:"field__name"
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class:"field__box"
+      .field
+        = f.label :パスワード, class:"field__name"
+        %br/
+        = f.password_field :password, autocomplete: "current-password", class:"field__box"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .actions
+        = f.submit "ログイン"
+    /= render "devise/shared/links"
