@@ -4,7 +4,7 @@
   .Search
     %form.Search__contents
       %input.inputText{"placeholder": "投稿を検索する", "type": "text"}
-      %input.submitBtn{"name": "commit", "type": "submit", "value": "検索🔍"}
+      %input.submitBtn{"name": "commit", "type": "submit", "value": "検索 🔍"}
   - if user_signed_in?
     .Header-user
       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'

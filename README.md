@@ -4,7 +4,7 @@
 |------|----|------|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|name|string|null: false|
+|name|string|null: false, add_index: true|
 ### Association
 - has_many :posts
 - has_many :likes
@@ -16,6 +16,7 @@
 |------|----|------|
 |game_name|string|null: false, add_index: true|
 |game_hard|string|null: false, add_index: true|
+|evaluation|integer||
 |title|string||
 |text|text|null:false|
 |image|string||
