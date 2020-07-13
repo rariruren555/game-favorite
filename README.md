@@ -17,7 +17,7 @@
 |game_name|string|null: false, add_index: true|
 |game_hard|string|null: false, add_index: true|
 |evaluation|integer||
-|title|string||
+|title|string|null:false|
 |text|text|null:false|
 |image|string||
 ### Association
