@@ -9,7 +9,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :image
       t.timestamps
     end
-    add_index :posts, :game_name,                 unique: true
-    add_index :posts, :game_hard,                 unique: true
+    add_index :posts, :game_name
+    add_index :posts, :game_hard
   end
 end

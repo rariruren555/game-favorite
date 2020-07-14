@@ -5,8 +5,8 @@
     = link_to "トップページに戻る", posts_index_path, class: 'btn'
 
 .Post-page
-  .Post-page__contents
-    = form_with(model: @post, local: true) do |f|
+  = form_with model: @post, local: true do |f|
+    .Post-page__contents
       .Post-page__contents__top
         .Post-page__contents__top__left
           <投稿ページ>
@@ -18,28 +18,19 @@
         .Post-page__contents__top__right
           .Game-title
             <ゲームタイトル>
-            /%input.Game-title__Title{"placeholder": "タイトル名", "type": "text"}
             = f.text_field :game_name, placeholder: "タイトル名" , class:"Game-title__Title"
           .Game-hard
             <ゲームハード>
-            /%input.Game-hard__Hard{"placeholder": "ハード名", "type": "text"}
             = f.text_field :game_hard, placeholder: "ハード名" , class:"Game-hard__Hard"
           .Evaluation
             <評価>
-            %select{name: "evaluation"}
-              %option{value: "0"} 1
-              %option{value: "1"} 2
-              %option{value: "2"} 3
-              %option{value: "3"} 4
-              %option{value: "4"} 5
-
+            = f.select :evaluation, [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5]]
       .Post-page__contents__bottom
-        %form.Form__contents
+        .Form__contents
           .Form__contents__title
             <見出し>
           = f.text_area :title, placeholder: "title" , rows: "2", class:"titleText"
           .Form__contents__text
             <本文>
           = f.text_area :text, placeholder: "text" , rows: "10", class:"textArea"
-          /%input.submitBtn{"name": "commit", "type": "submit", "value": "送信"}
           = f.submit "送信", class:"submitBtn"

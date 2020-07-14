@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2020_07_13_103840) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_hard"], name: "index_posts_on_game_hard", unique: true
-    t.index ["game_name"], name: "index_posts_on_game_name", unique: true
+    t.index ["game_hard"], name: "index_posts_on_game_hard"
+    t.index ["game_name"], name: "index_posts_on_game_name"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

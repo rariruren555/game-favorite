@@ -1,0 +1,38 @@
+.complete-page {
+  background-color: #FFFFDD;
+  margin-top: 70px;
+  width: 100vw;
+  height: 100vh;
+  &__contents {
+    background-color: #FFFFEE;
+    padding: 0 150px;
+    margin: 0 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__top {
+      font-size: 30px;
+      margin-top: 100px;
+      color: #EE0000;
+    }
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 150px;
+      font-weight: bold;
+      .bottom-btn {
+        border: 2px solid #777777;
+        border-radius: 3px;
+        font-size: 16px;
+        padding: 10px 20px;
+        background-color: #FFDBC9;
+        color: black;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
