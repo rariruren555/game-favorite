@@ -10,7 +10,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    @post = Post.create(post_params)
+    if @post.save
+      flash.now[:notice] = '投稿が完了しました'
+    else
+      redirect_to new_post_path, alert: '入力欄を全て入力してください。'
+    end
   end
 
   private
