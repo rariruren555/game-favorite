@@ -1,8 +1,8 @@
 .Header
   .Header-logo
-    = link_to "Game Favorite", posts_index_path
+    = link_to "Game Favorite", root_path
   .Header-user
-    = link_to "トップページに戻る", posts_index_path, class: 'btn'
+    = link_to "トップページに戻る", root_path, class: 'btn'
 
 .Post-page
   = form_with model: @post, local: true do |f|
@@ -16,7 +16,7 @@
               = f.label :image, class: "items-btn" do
                 = icon('fas', 'image')
                 = f.file_field :image, class: "items-btn--icon"
-                
+
         .Post-page__contents__top__right
           .Game-title
             <ゲームタイトル>
