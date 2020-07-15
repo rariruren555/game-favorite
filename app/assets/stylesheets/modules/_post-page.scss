@@ -36,7 +36,10 @@
             flex-direction: column;
             align-items: center;
             .items-btn {
-              color: #444444	;
+              color: #444444;
+              &--icon {
+                display: none;
+              }
             }
           }
         }

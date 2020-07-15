@@ -13,8 +13,10 @@
           .Image-box
             <画像>
             .Image-box__icon
-              =link_to '/posts', class: "items-btn" do
-                = icon('far', 'image', class: "items-btn--icon")
+              = f.label :image, class: "items-btn" do
+                = icon('fas', 'image')
+                = f.file_field :image, class: "items-btn--icon"
+                
         .Post-page__contents__top__right
           .Game-title
             <ゲームタイトル>

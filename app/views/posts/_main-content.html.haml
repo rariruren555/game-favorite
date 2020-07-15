@@ -5,7 +5,15 @@
     - @posts.each do |post|
       .Main-post
         .Main-post__image
-          = post.image
+          .Main-post__image__inner
+            - if post.image?
+              = image_tag post.image.url
+            - else
+              %span{class:"fa-stack"}
+                = icon('fas', 'slash', class: 'fa-stack-2x')
+                = icon('fas', 'image', class: 'fa-stack-2x')
+              .Main-post__image__inner__no-image
+                No image
         .Main-post__game-name
           = post.game_name
         .Main-post__game-hard
