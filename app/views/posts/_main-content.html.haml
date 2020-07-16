@@ -4,6 +4,16 @@
   .Main-contents__content
     - @posts.each do |post|
       .Main-post
+        %ul.dropmenu{id:"normal"}
+          %li
+            = icon('fa', 'angle-down', class: "dropbtn")
+            %ul
+              %li
+                = link_to '詳細', post_path(post.id), method: :get
+              %li
+                = link_to '編集', post_path(post.id), method: :get
+              %li
+                = link_to '削除', post_path(post.id), method: :get
         .Main-post__image
           .Main-post__image__inner
             - if post.image?
