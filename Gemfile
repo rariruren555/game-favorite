@@ -60,3 +60,8 @@ gem 'font-awesome-sass','~> 5.8.1'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+
+gem 'pry-rails'
+
+gem 'carrierwave'
+gem 'mini_magick'

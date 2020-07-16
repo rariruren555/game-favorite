@@ -14,13 +14,10 @@
             %li
               = link_to "ログアウト", destroy_user_session_path, method: :delete
     = link_to "投稿する", new_post_path, class: 'btn'
-
 .complete-page
   .complete-page__contents
     .complete-page__contents__top
-      投稿が完了しました
+      削除が完了しました
     .complete-page__contents__bottom
       = link_to "トップページ", root_path, class:'bottom-btn'
       = link_to "マイページ", root_path, class:'bottom-btn'
-
-
