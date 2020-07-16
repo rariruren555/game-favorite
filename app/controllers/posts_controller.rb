@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:edit, :show]
   before_action :move_to_index, except: [:index]
 
   def index
@@ -18,12 +19,30 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+  end
+
+  def edit
+  end
+
+  def update
+    post = Post.find(params[:id])
+    post.update(post_params)
+  end
+
   def show
   end
+
 
   private
   def post_params
     params.require(:post).permit(:game_name, :game_hard, :evaluation, :title, :text, :image)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 
   def move_to_index

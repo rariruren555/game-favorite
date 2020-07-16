@@ -1,0 +1,19 @@
+.Header
+  .Header-logo
+    = link_to "Game Favorite", root_path
+  - if user_signed_in?
+    .Header-user
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+      = link_to "投稿する", new_post_path, class: 'btn'
+  - else
+    .Header-user
+      = link_to "ログイン", new_user_session_path, class: 'btn'
+      = link_to "新規登録", new_user_registration_path, class: 'btn'
+
+.complete-page
+  .complete-page__contents
+    .complete-page__contents__top
+      削除が完了しました
+    .complete-page__contents__bottom
+      = link_to "トップページ", root_path, class:'bottom-btn'
+      = link_to "マイページ", root_path, class:'bottom-btn'

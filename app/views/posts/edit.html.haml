@@ -1,0 +1,38 @@
+.Header
+  .Header-logo
+    = link_to "Game Favorite", root_path
+  .Header-user
+    = link_to "トップページに戻る", root_path, class: 'btn'
+
+.Post-page
+  = form_with model: @post, local: true do |f|
+    .Post-page__contents
+      .Post-page__contents__top
+        .Post-page__contents__top__left
+          <編集ページ>
+          .Image-box
+            <画像>
+            .Image-box__icon
+              = f.label :image, class: "items-btn" do
+                = icon('fas', 'image')
+                = f.file_field :image, class: "items-btn--icon"
+
+        .Post-page__contents__top__right
+          .Game-title
+            <ゲームタイトル>
+            = f.text_field :game_name, placeholder: "タイトル名" , class:"Game-title__Title"
+          .Game-hard
+            <ゲームハード>
+            = f.text_field :game_hard, placeholder: "ハード名" , class:"Game-hard__Hard"
+          .Evaluation
+            <評価>
+            = f.select :evaluation, [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5]]
+      .Post-page__contents__bottom
+        .Form__contents
+          .Form__contents__title
+            <見出し>
+          = f.text_area :title, placeholder: "title" , rows: "2", class:"titleText"
+          .Form__contents__text
+            <本文>
+          = f.text_area :text, placeholder: "text" , rows: "10", class:"textArea"
+          = f.submit "送信", class:"submitBtn"

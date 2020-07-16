@@ -11,9 +11,9 @@
               %li
                 = link_to '詳細', post_path(post.id), method: :get
               %li
-                = link_to '編集', post_path(post.id), method: :get
+                = link_to '編集', edit_post_path(post.id), method: :get
               %li
-                = link_to '削除', post_path(post.id), method: :get
+                = link_to '削除', post_path(post.id), method: :delete
         .Main-post__image
           .Main-post__image__inner
             - if post.image?
