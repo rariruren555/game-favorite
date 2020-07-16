@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show]
-  before_action :move_to_index, except: [:index]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @posts = Post.all.order("created_at DESC")
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:game_name, :game_hard, :evaluation, :title, :text, :image, :user_id)
+    params.require(:post).permit(:game_name, :game_hard, :evaluation, :title, :text, :image, :user_id).merge(user_id: current_user.id)
   end
 
   def set_post

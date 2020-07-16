@@ -21,25 +21,36 @@
                 No image
 
       .Post-page__contents__top__right
-        .Game-title
+        .Game-title-show
           <ゲームタイトル>
-          = @post.game_name
-        .Game-hard
+          .Game-title-show__title
+            = @post.game_name
+        .Game-hard-show
           <ゲームハード>
-          = @post.game_hard
-        .Evaluation
+          .Game-hard-show__hard
+            = @post.game_hard
+        .Evaluation-show
           <評価>
           = @post.evaluation
-        .User-name
-          <名前>
-          = @user.name
+        .User-show
+          <投稿者名>
+          .User-show__name
+            = @user.name
         .FavoriteRank
-          %div ☆いいね
-          %div ランキング順位()
-    .Post-page__contents__bottom
+          .FavoriteRank__favorite
+            = icon('far', 'thumbs-up', class: "favorite-icon")
+            .FavoriteRank__favorite__message
+              いいね
+          .FavoriteRank__rank
+            ランキング順位()
+    /*ここから変える*/
+    .Post-page-show__contents__bottom
       .Form__contents
         .Form__contents__title
           <見出し>
-          = @post.title
+          .title-show
+            = @post.title
+        .Form__contents__text
           <本文>
-          = @post.evaluation
+          .text-show
+            = @post.text

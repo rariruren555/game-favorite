@@ -11,8 +11,9 @@
       = render "devise/shared/error_messages", resource: resource
       .field
         = f.label :名前, class:"field__name"
+        %em (6 文字以下)
         %br/
-        = f.text_field :name, autofocus: true, autocomplete: "name", class:"field__box"
+        = f.text_field :name, autofocus: true, autocomplete: "name",maxlength: "6", class:"field__box"
       .field
         = f.label :メールアドレス, class:"field__name"
         %br/

@@ -2,6 +2,17 @@
   .Header-logo
     = link_to "Game Favorite", root_path
   .Header-user
+    .Header-user-info
+      %ul.user-info
+        %li
+          %span
+            = current_user.name
+          = icon('fa', 'angle-down', class: "user-btn")
+          %ul
+            %li
+              = link_to "マイページ", "/users/#{current_user.id}"
+            %li
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
     = link_to "トップページに戻る", root_path, class: 'btn'
 
 .Post-page
@@ -27,7 +38,6 @@
           .Evaluation
             <評価>
             = f.select :evaluation, [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5]]
-            = f.hidden_field :user_id, value: current_user.id
       .Post-page__contents__bottom
         .Form__contents
           .Form__contents__title
