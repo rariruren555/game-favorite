@@ -27,6 +27,7 @@
           .Evaluation
             <評価>
             = f.select :evaluation, [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5]]
+            = f.hidden_field :user_id, value: current_user.id
       .Post-page__contents__bottom
         .Form__contents
           .Form__contents__title

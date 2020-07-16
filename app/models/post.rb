@@ -3,5 +3,7 @@ class Post < ApplicationRecord
   validates :game_hard, presence: true
   validates :text, presence: true
 
+  belongs_to :user
+
   mount_uploader :image, ImageUploader
 end

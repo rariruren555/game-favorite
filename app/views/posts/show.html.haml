@@ -10,9 +10,15 @@
       .Post-page__contents__top__left
         <詳細ページ>
         .Image-box
-          %div
-          .Image-box__icon
-            %div
+          .Image-box__inner
+            - if @post.image?
+              = image_tag @post.image.url
+            - else
+              %span{class:"fa-stack"}
+                = icon('fas', 'slash', class: 'fa-stack-2x')
+                = icon('fas', 'image', class: 'fa-stack-2x')
+              .Image-box__inner__no-image
+                No image
 
       .Post-page__contents__top__right
         .Game-title
@@ -26,7 +32,7 @@
           = @post.evaluation
         .User-name
           <名前>
-          = @post.game_name
+          = @user.name
         .FavoriteRank
           %div ☆いいね
           %div ランキング順位()
@@ -34,6 +40,6 @@
       .Form__contents
         .Form__contents__title
           <見出し>
-          %div
+          = @post.title
           <本文>
-          %div
+          = @post.evaluation

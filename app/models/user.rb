@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  has_many :posts
+  has_many :posts, dependent: :destroy, foreign_key: :post_user_id
   has_many :likes
   has_many :liked_posts, through: :likes, source: :post
   has_many :comments

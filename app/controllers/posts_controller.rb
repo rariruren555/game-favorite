@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.new(user_id: @current_user.id)
   end
 
   def create
@@ -33,12 +33,14 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @user = User.find(@post.user_id)
   end
 
 
   private
   def post_params
-    params.require(:post).permit(:game_name, :game_hard, :evaluation, :title, :text, :image)
+    params.require(:post).permit(:game_name, :game_hard, :evaluation, :title, :text, :image, :user_id)
   end
 
   def set_post
