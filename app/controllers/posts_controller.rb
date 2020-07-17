@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -33,7 +33,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @user = User.find(@post.user_id)
   end
 

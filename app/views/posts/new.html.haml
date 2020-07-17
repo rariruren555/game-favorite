@@ -13,7 +13,7 @@
               = link_to "マイページ", "/users/#{current_user.id}"
             %li
               = link_to "ログアウト", destroy_user_session_path, method: :delete
-    = link_to "トップページに戻る", root_path, class: 'btn'
+    = link_to "トップページに戻る", root_path, class: 'btn2'
 
 .Post-page
   = form_with model: @post, local: true do |f|

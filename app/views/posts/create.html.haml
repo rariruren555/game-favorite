@@ -21,6 +21,6 @@
       投稿が完了しました
     .complete-page__contents__bottom
       = link_to "トップページ", root_path, class:'bottom-btn'
-      = link_to "マイページ", root_path, class:'bottom-btn'
+      = link_to "マイページ", "/users/#{current_user.id}", class:'bottom-btn'
 
 

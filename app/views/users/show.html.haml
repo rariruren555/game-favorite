@@ -1,0 +1,50 @@
+.wrapper
+  = render partial: "posts/header"
+  = render partial: "posts/side-bar"
+  .Main-contents
+    .Main-contents__show
+      .Main-contents__show__message
+        - if current_user.id == @user
+          %p
+            <マイページ>
+        - else
+          %p
+            <
+            = @name
+            さんのページ>
+      .Main-contents__show__name
+        <ユーザー名>
+    .Main-contents__user-name
+      = @name
+    .Main-contents__title
+      <投稿一覧>
+    .Main-contents__content
+      - @posts.each do |post|
+        .Main-post
+          %ul.dropmenu{id:"normal"}
+            %li
+              = icon('fa', 'angle-down', class: "dropbtn")
+              %ul
+                %li
+                  = link_to '詳細', post_path(post.id), method: :get
+                - if user_signed_in? && current_user.id == post.user_id
+                  %li
+                    = link_to '編集', edit_post_path(post.id), method: :get
+                  %li
+                    = link_to '削除', post_path(post.id), method: :delete
+          .Main-post__image
+            .Main-post__image__inner
+              - if post.image?
+                = image_tag post.image.url
+              - else
+                %span{class:"fa-stack"}
+                  = icon('fas', 'slash', class: 'fa-stack-2x')
+                  = icon('fas', 'image', class: 'fa-stack-2x')
+                .Main-post__image__inner__no-image
+                  No image
+          .Main-post__game-name
+            = post.game_name
+          .Main-post__game-hard
+            = post.game_hard
+          .Main-post__title
+            = post.title
