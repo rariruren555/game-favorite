@@ -11,6 +11,7 @@
     font-size: 40px;
     margin: 40px 0 30px;
     padding-left: 40px;
+    width: 500px;
   }
   &__content {
     display: flex;
@@ -101,7 +102,6 @@
         background: #FFFF22;
       }
         
-      
       &__image {
         position: relative;
         width: 100%;
@@ -139,7 +139,6 @@
         border-bottom: 1px solid lightgray;
       }
       &__game-hard {
-        
         padding: 0 5px;
         text-align: center;
         border: 1px solid lightgray;
@@ -157,5 +156,23 @@
       }
     }
   }
+  &__show {
+    width: 1000px;
+    &__message {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    &__name {
+      font-size: 30px;
+    }
+  }
+  &__user-name {
+    font-size: 20px;
+    width: 400px;
+  }
+  &__title {
+    font-size: 30px;
+    margin-top: 30px;
+    width: 400px;
+  }
 }
-
