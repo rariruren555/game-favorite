@@ -71,3 +71,22 @@
           <本文>
           .text-show
             = @post.text
+            
+    .comments
+      - if current_user
+        = form_with(model: [@post, @comment], local: true, id: "new_comment", class: "comment-form") do |f|
+          %h1 <コメントする>
+          = f.text_area :text, placeholder: "コメントを入力", rows: "3", class: "comment-text"
+          = f.submit "送信", class: "comment-submit"
+      - else
+        %strong.else
+          %p.else *** コメントの投稿には新規登録/ログインが必要です ***
+      .comments__show
+        %h1 <コメント一覧>
+        - if @comments
+          - @comments.each do |comment|
+            %p
+              %strong
+                = link_to comment.user.name, "/users/#{comment.user_id}"
+                ：
+              = comment.text
