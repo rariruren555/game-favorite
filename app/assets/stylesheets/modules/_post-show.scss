@@ -65,7 +65,6 @@
 
 .Post-page-show__contents__bottom {
   width: 100%;
-  height: 25%;
   padding-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -79,6 +78,7 @@
     height: 100%;
     width: 100%;
     padding: 0 15%;
+    word-break: break-all;
     &__title {
       display: flex;
       flex-direction: column;
@@ -101,6 +101,56 @@
         font-size: 17px;
       }
     }
-
   }
+}
+
+.comments {
+  margin-top: 50px;
+  &__show {
+    margin-left: 30px;
+    word-break: break-all;
+    padding-right: 10px;
+    h1 {
+      margin: 10px 0 20px 0;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+  }
+  .comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15%;
+    .comment-text {
+      height: 180px;
+      padding: 5px 10px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  strong.else {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p.else {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+  }
+  a {
+    color: black;
+    font-weight: bold;
+  }
+  a:hover{
+    background: #FFFF22;
+  }
+}
+h1 {
+  font-size: 22px;
+  font-weight: bold;
+}
+.comment-submit {
+  width: 80px;
+  font-weight: bold;
 }
