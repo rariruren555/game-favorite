@@ -2,9 +2,9 @@
   .Header-logo
     = link_to "Game Favorite", root_path
   .Search
-    %form.Search__contents
-      %input.inputText{"placeholder": "投稿を検索する", "type": "text"}
-      %input.submitBtn{"name": "commit", "type": "submit", "value": "検索 🔍"}
+    = form_with(url: search_posts_path, local: true, method: :get, class: "Search__contents") do |f|
+      = f.text_field :keyword, placeholder: "ゲーム名,ハード名で投稿を検索する", class: "inputText"
+      = f.submit "検索", class: "submitBtn"
   - if user_signed_in?
     .Header-user
       %ul.user-info

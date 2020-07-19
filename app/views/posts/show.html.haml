@@ -76,7 +76,7 @@
       - if current_user
         = form_with(model: [@post, @comment], local: true, id: "new_comment", class: "comment-form") do |f|
           %h1 <コメントする>
-          = f.text_area :text, placeholder: "コメントを入力", rows: "3", class: "comment-text"
+          = f.text_area :text, placeholder: "コメントを入力", class: "comment-text"
           = f.submit "送信", class: "comment-submit"
       - else
         %strong.else
