@@ -4,7 +4,12 @@
   .Main-contents
     .Main-contents__show
       .Main-contents__show__message
-        - if current_user.id == @user
+        - if !user_signed_in?
+          %p
+            <
+            = @name
+            さんのページ>
+        - elsif current_user.id == @user
           %p
             <マイページ>
         - else
