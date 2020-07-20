@@ -1,5 +1,26 @@
 .wrapper
-  = render partial: "posts/header"
+  .Header
+    .Header-logo
+      = link_to "Game Favorite", root_path
+    - if user_signed_in?
+      .Header-user
+        %ul.user-info
+          %li
+            %span
+              = current_user.name
+            = icon('fa', 'angle-down', class: "user-btn")
+            %ul
+              %li
+                = link_to "マイページ", "/users/#{current_user.id}"
+              %li
+                = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "投稿する", new_post_path, class: 'btn'
+        = link_to "トップページに戻る", root_path, class: 'btn2'
+    - else
+      .Header-user
+        = link_to "ログイン", new_user_session_path, class: 'btn'
+        = link_to "新規登録", new_user_registration_path, class: 'btn'
+        = link_to "トップページに戻る", root_path, class: 'btn2'
   = render partial: "posts/side-bar"
   .Main-contents
     .Main-contents__show

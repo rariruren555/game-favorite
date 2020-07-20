@@ -31,7 +31,7 @@
 |------|----|------|
 |user|integer|references|null: false, foreign_key: true|
 |post|integer|references|null: false, foreign_key: true|
-|text|text||
+|text|text|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :post
