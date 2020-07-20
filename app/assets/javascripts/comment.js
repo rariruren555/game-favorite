@@ -24,6 +24,7 @@ $(function(){
     .done(function(data){
       let html = buildHTML(data);
       $('.comments__show').append(html);
+      $('.Post-page').animate({ scrollTop: $('.Post-page')[0].scrollHeight});
       $('.comment-text').val('');
       $('.comment-submit').prop('disabled', false);
     })
