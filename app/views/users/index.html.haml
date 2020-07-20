@@ -1,0 +1,84 @@
+.wrapper
+  .Header
+    .Header-logo
+      = link_to "Game Favorite", root_path
+    - if user_signed_in?
+      .Header-user
+        %ul.user-info
+          %li
+            %span
+              = current_user.name
+            = icon('fa', 'angle-down', class: "user-btn")
+            %ul
+              %li
+                = link_to "マイページ", "/users/#{current_user.id}"
+              %li
+                = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "投稿する", new_post_path, class: 'btn'
+        = link_to "トップページに戻る", root_path, class: 'btn2'
+    - else
+      .Header-user
+        = link_to "ログイン", new_user_session_path, class: 'btn'
+        = link_to "新規登録", new_user_registration_path, class: 'btn'
+        = link_to "トップページに戻る", root_path, class: 'btn2'
+
+  = render partial: "posts/side-bar"
+  .Main-contents
+    .Main-contents__show
+      .Main-contents__show__message
+        <いいねランキング>
+    .Main-contents__user-name
+      = @name
+    .Main-contents__title
+      <ランキング順位>
+    .Main-contents__content
+      - lastFavorite = 0
+      - j = 1
+      - @all_ranks.each.with_index(1) do |post, i|
+        - if i == 1
+          - lastFavorite = post.likes.count
+        .Main-contents__content__rank
+          .Main-contents__content__rank__num
+            - if post.likes.count != lastFavorite
+              - j = i
+              = j
+              位
+              いいね数：
+              = post.likes.count
+              - lastFavorite = post.likes.count
+            - else
+              - lastFavorite = post.likes.count
+              = j
+              位
+              いいね数：
+              = post.likes.count
+            %br/
+          .Main-post-rank
+            %ul.dropmenu{id:"normal"}
+              %li
+                = icon('fa', 'angle-down', class: "dropbtn")
+                %ul
+                  %li
+                    = link_to '詳細', post_path(post.id), method: :get
+                  - if user_signed_in? && current_user.id == post.user_id
+                    %li
+                      = link_to '編集', edit_post_path(post.id), method: :get
+                    %li
+                      = link_to '削除', post_path(post.id), method: :delete
+              
+            .Main-post__image
+              .Main-post__image__inner
+                - if post.image?
+                  = image_tag post.image.url
+                - else
+                  %span{class:"fa-stack"}
+                    = icon('fas', 'slash', class: 'fa-stack-2x')
+                    = icon('fas', 'image', class: 'fa-stack-2x')
+                  .Main-post__image__inner__no-image
+                    No image
+            .Main-post__game-name
+              = post.game_name
+            .Main-post__game-hard
+              = post.game_hard
+            .Main-post__title
+              = post.title

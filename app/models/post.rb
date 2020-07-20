@@ -10,8 +10,7 @@ class Post < ApplicationRecord
 
   def self.search(search)
     if search
-      Post.where('game_name LIKE(?)', "%#{search}%")
-      Post.where('game_hard LIKE(?)', "%#{search}%")
+      Post.where('game_name LIKE(?) OR game_hard LIKE(?)', "%#{search}%", "%#{search}%")
     else
       Post.all
     end

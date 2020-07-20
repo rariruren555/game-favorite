@@ -1,13 +1,14 @@
 .Side-bar
   .Side-bar__items
     .Side-bar__items__icon
-      =link_to root_path, class: "items-btn" do
+      =link_to users_path, class: "items-btn" do
         = icon('fas', 'chess-queen', class: "items-btn")
     .Side-bar__items__name
       ランキング
-  .Side-bar__items
-    .Side-bar__items__icon
-      =link_to root_path, class: "items-btn" do
-        = icon('far', 'thumbs-up', class: "items-btn--icon")
-    .Side-bar__items__name
-      いいね
+  -if user_signed_in?
+    .Side-bar__items
+      .Side-bar__items__icon
+        =link_to  likes_users_path, class: "items-btn" do
+          = icon('far', 'thumbs-up', class: "items-btn--icon")
+      .Side-bar__items__name
+        いいね

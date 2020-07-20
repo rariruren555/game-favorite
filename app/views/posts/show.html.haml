@@ -20,6 +20,7 @@
       = link_to "ログイン", new_user_session_path, class: 'btn'
       = link_to "新規登録", new_user_registration_path, class: 'btn'
       = link_to "トップページに戻る", root_path, class: 'btn2'
+= render "side-bar"
 
 .Post-page
   .Post-page__contents
@@ -55,12 +56,33 @@
             = link_to @user.name, "/users/#{@post.user.id}"
         .FavoriteRank
           .FavoriteRank__favorite
-            = icon('far', 'thumbs-up', class: "favorite-icon")
-            .FavoriteRank__favorite__message
-              いいね
-          .FavoriteRank__rank
-            ランキング順位()
-    /*ここから変える*/
+            %h2 
+              いいね件数: 
+              = @post.likes.count
+              - if !user_signed_in?
+                %h5 いいね機能使用には
+                %h6 新規登録/ログインが必要です
+              - elsif current_user.already_liked?(@post)
+                = link_to post_like_path(@post), method: :delete, remote: true do
+                  = icon('fas', 'thumbs-up', class: "favorite-icon-color", id: "color")
+                .FavoriteRank__favorite__message
+                  いいねを取り消す
+              - else
+                = link_to post_likes_path(@post), method: :post, remote: true do
+                  = icon('fas', 'thumbs-up', class: "favorite-icon-normal", id: "normal")
+                .FavoriteRank__favorite__message
+                  いいね
+            %ul.FavoriteRank__favorite__list
+              %li
+                %span いいねしたユーザー
+                = icon('fa', 'angle-down', class: "user-btn")
+                %ul
+                  %li
+                    - @post.liked_users.each do |user|
+                      %h3= link_to user.name, "/users/#{user.id}"
+            
+
+
     .Post-page-show__contents__bottom
       .Form__contents
         .Form__contents__title
@@ -80,7 +102,7 @@
           = f.submit "送信", class: "comment-submit"
       - else
         %strong.else
-          %p.else *** コメントの投稿には新規登録/ログインが必要です ***
+          %p.else ＊＊＊ コメントの投稿には新規登録/ログインが必要です ＊＊＊
       .comments__show
         %h1 <コメント一覧>
         - if @comments

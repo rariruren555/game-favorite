@@ -36,6 +36,7 @@ class PostsController < ApplicationController
     @user = User.find(@post.user_id)
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
+    @like = Like.new
   end
 
   def search
