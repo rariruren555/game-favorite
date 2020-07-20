@@ -6,8 +6,7 @@ class CommentsController < ApplicationController
         format.json
       end
     else
-      flash.now[:alert] = 'メッセージを入力してください。'
-
+      redirect_back(fallback_location: root_path)
     end
   end
 

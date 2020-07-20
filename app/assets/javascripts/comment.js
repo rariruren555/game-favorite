@@ -28,7 +28,8 @@ $(function(){
       $('.comment-submit').prop('disabled', false);
     })
     .fail(function(){
-      alert('error');
+      alert('コメントを入力してください');
+      $('.comment-submit').prop('disabled', false);
     })
   })
 });
