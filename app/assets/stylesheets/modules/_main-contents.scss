@@ -17,6 +17,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     &::after {
       content:"";
       display:block;
@@ -154,6 +155,146 @@
         -webkit-line-clamp: 3;
         word-break: break-all;
         border-top: 1px solid lightgray;
+      }
+    }
+    &__rank {
+      display: flex;
+      flex-direction: column;
+      width: 26%;
+      margin: 30px 0 30px;
+      &__num {
+        font-size: 20px;
+      }
+      .Main-post-rank {
+        display: flex;
+        flex-direction: column;
+        height: 330px;
+        border: 1px solid lightgray;
+        border-radius: 3px;
+        position: relative;
+
+        #normal li ul{
+          display: none;
+        }
+        #normal li:hover ul{
+          display: block;
+        }
+        .dropmenu{
+          list-style-type: none;
+          width: 300px;
+        }
+        .dropmenu:before, .dropmenu:after{
+          content: "";
+          display: table;
+        }
+        .dropmenu:after{
+          clear: both;
+        }
+        .dropmenu li{
+          position: relative;
+          width: 20%;
+          float: left;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+        }
+        .dropbtn{
+          display: block;
+          background: #FFFFDD;
+          border-bottom: 2px solid lightgray;
+          border-right: 2px solid lightgray;
+          border-radius: 3px;
+          color: black;
+          font-size: 14px;
+          text-decoration: none;
+        }
+        .dropmenu li a{
+          display: block;
+          background: #FFFFDD;
+          border-bottom: 2px solid lightgray;
+          border-right: 2px solid lightgray;
+          border-radius: 3px;
+          color: black;
+          font-size: 14px;
+          text-decoration: none;
+        }
+        .dropmenu li ul{
+          list-style: none;
+          position: absolute;
+          z-index: 1;
+          top: 100%;
+          left: 0;
+          margin: 0;
+          padding: 0;
+        }
+        .dropmenu li ul li{
+          width: 100%;
+        }
+        .dropmenu li ul li a{
+          padding: 4px 15px;
+          text-align: left;
+        }
+        .dropmenu li:hover > a{
+          background:#FFFFCC;
+        }
+        .dropmenu li a:hover{
+          background: #FFFF22;
+        }
+          
+        &__image {
+          position: relative;
+          width: 100%;
+          height: 200px;
+          padding: 10px;
+          border-bottom: 1px solid lightgray;
+          &__inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: auto;
+            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+          }
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+        &__game-name {
+          padding: 0 5px;
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          border: 1px solid lightgray;
+          border-bottom: 1px solid lightgray;
+        }
+        &__game-hard {
+          padding: 0 5px;
+          text-align: center;
+          border: 1px solid lightgray;
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        &__title {
+          padding: 0 5px;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          word-break: break-all;
+          border-top: 1px solid lightgray;
+        }
       }
     }
   }

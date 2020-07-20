@@ -5,11 +5,12 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :comments
+  has_many :likes
+  has_many :liked_users, through: :likes, source: :user
 
   def self.search(search)
     if search
-      Post.where('game_name LIKE(?)', "%#{search}%")
-      Post.where('game_hard LIKE(?)', "%#{search}%")
+      Post.where('game_name LIKE(?) OR game_hard LIKE(?)', "%#{search}%", "%#{search}%")
     else
       Post.all
     end

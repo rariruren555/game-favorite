@@ -41,22 +41,90 @@
 
 .FavoriteRank {
   display: flex;
+  flex-direction: column;
   padding: 5px;
   margin-top: 20px;
   &__favorite {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-right: 5px;
-    .favorite-icon {
+    .favorite-icon-color {
       font-size: 30px;
+      color: yellow;
+      -webkit-text-stroke-width: 2px; 
+      -webkit-text-stroke-color: black; 
+    }
+    .favorite-icon-normal {
+      font-size: 30px;
+      color: #FFFFEE;
+      -webkit-text-stroke-width: 2px; 
+      -webkit-text-stroke-color: black; 
     }
     &__message {
       font-size: 11px;
+      margin-right: 5px;
     }
+    h2 {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+    }
+
+    h5 {
+      margin-top: 10px;
+    }
+    h6 {
+      margin-bottom: 10px;
+    }
+
+    &__list {
+      margin-top: 5px;
+      position: relative;
+    }
+    &__list li {
+      list-style: none;
+      position: relative;
+    }
+    &__list li a:hover{
+      background: #FFFF22;
+    }
+    &__list li a {
+      background: #FFFFDD;
+      border: 1px solid lightgray;
+      border-bottom: 2px solid lightgray;
+      border-right: 2px solid lightgray;
+      border-radius: 3px;
+      color: black;
+      display: block;
+      height: 2rem;
+      line-height: 2rem;
+      text-align: center;
+      text-decoration: none;
+      width: 100px;
+    }
+    &__list ul {
+      position: absolute;
+      right: 70px;
+    }
+    &__list li li {
+      height: 0;
+      overflow: hidden;
+      transition: .5s;
+    }
+    &__list li li a {
+      border-top: 1px solid #eee;
+    }
+    &__list li:hover > ul > li {
+      height: 2rem;
+      overflow: visible;
+    }
+
+    .user-btn {
+      font-size: 20px;
+    }
+
   }
   &__rank {
-    margin-left: 30px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
   }
