@@ -1,7 +1,14 @@
 class CommentsController < ApplicationController
   def create
-    comment = Comment.create(comment_params)
-    redirect_to "/posts/#{comment.post.id}"
+    @comment = Comment.create(comment_params)
+    if @comment.save
+      respond_to do |format|
+        format.json
+      end
+    else
+      flash.now[:alert] = 'メッセージを入力してください。'
+
+    end
   end
 
   private

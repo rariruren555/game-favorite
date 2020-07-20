@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new(user_id: @current_user.id)
+    
   end
 
   def create
@@ -15,7 +16,8 @@ class PostsController < ApplicationController
     if @post.save
       flash.now[:notice] = '投稿が完了しました'
     else
-      redirect_to new_post_path, alert: '入力欄を全て入力してください。'
+      flash.now[:alert] = '入力欄を全て入力してください。'
+      render :new
     end
   end
 
