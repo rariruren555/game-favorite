@@ -1,0 +1,34 @@
+.FavoriteRank__favorite
+  %h2 
+    いいね件数: 
+    = @post.likes.count
+    - if !user_signed_in?
+      %h5 いいね機能使用には
+      %h6 新規登録/ログインが必要です  
+
+    - elsif current_user.already_liked?(@post)
+      = link_to post_like_path(@post.id, @current_like.id), method: :delete, remote: true do
+        = icon('fas', 'thumbs-up', class: "favorite-icon-color", id: "color")
+      .FavoriteRank__favorite__message
+        いいねを取り消す
+      %ul.FavoriteRank__favorite__list
+        %li
+          %span いいねしたユーザー
+          = icon('fa', 'angle-down', class: "user-btn")
+          %ul
+            %li
+              - @post.liked_users.each do |user|
+                %h3= link_to user.name, "/users/#{user.id}"
+    - else
+      = link_to post_likes_path(@post.id), method: :post, remote: true do
+        = icon('fas', 'thumbs-up', class: "favorite-icon-normal", id: "normal")
+      .FavoriteRank__favorite__message
+        いいね
+      %ul.FavoriteRank__favorite__list
+        %li
+          %span いいねしたユーザー
+          = icon('fa', 'angle-down', class: "user-btn")
+          %ul
+            %li
+              - @post.liked_users.each do |user|
+                %h3= link_to user.name, "/users/#{user.id}"
