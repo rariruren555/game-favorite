@@ -59,7 +59,7 @@
                 = icon('fa', 'angle-down', class: "dropbtn")
                 %ul
                   %li
-                    = link_to '詳細', post_path(post.id), method: :get
+                    = link_to '詳細', post_path(post), method: :get
                   - if user_signed_in? && current_user.id == post.user_id
                     %li
                       = link_to '編集', edit_post_path(post.id), method: :get
