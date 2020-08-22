@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: heroku_947bb828cea74db
+  database: game_favorite_production
   username: game_favorite
   password: <%= ENV['GAME_FAVORITE_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
