@@ -39,7 +39,9 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
     @like = Like.new
-    @current_like = @post.likes.where(user_id: current_user.id).first
+    if user_signed_in?
+      @current_like = @post.likes.where(user_id: current_user.id).first
+    end
   end
 
   def search
