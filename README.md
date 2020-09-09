@@ -4,3 +4,5 @@
 ランキングによって、現在どのようなゲームが流行っているのかなどがすぐにわかります。
 
 URL: https://game-favorite.herokuapp.com/
+
+[![Image from Gyazo](https://i.gyazo.com/587f000111fd7ec95f5d656b03ebb64c.png)](https://gyazo.com/587f000111fd7ec95f5d656b03ebb64c)
