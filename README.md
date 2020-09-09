@@ -5,4 +5,4 @@
 
 URL: https://game-favorite.herokuapp.com/
 
-[![Image from Gyazo](https://i.gyazo.com/587f000111fd7ec95f5d656b03ebb64c.png)](https://gyazo.com/587f000111fd7ec95f5d656b03ebb64c)
+[![Image from Gyazo](https://i.gyazo.com/f8815f398c201c8b512dbd7f8411daa7.png)](https://gyazo.com/f8815f398c201c8b512dbd7f8411daa7)
