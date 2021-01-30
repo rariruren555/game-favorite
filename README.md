@@ -34,8 +34,6 @@ URL: https://game-favorite.herokuapp.com/
 
 
 # DB設計
-
-# GameFavorite DB設計
 ## usersテーブル
 |Column|Type|Option|
 |------|----|------|
