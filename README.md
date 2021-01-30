@@ -1,5 +1,5 @@
 # アプリ名
-## GameFavorite
+GameFavorite
 # 概要
 # 本番環境
 # 作成背景(意図)
