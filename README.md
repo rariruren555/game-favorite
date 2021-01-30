@@ -5,6 +5,8 @@
 
 URL: https://game-favorite.herokuapp.com/
 
+↓トップページのイメージ図
+
 [![Image from Gyazo](https://i.gyazo.com/f8815f398c201c8b512dbd7f8411daa7.png)](https://gyazo.com/f8815f398c201c8b512dbd7f8411daa7)
 
 ## 使い方
