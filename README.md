@@ -30,25 +30,25 @@ URL: https://game-favorite.herokuapp.com/
 
 
 # 使用技術(開発環境)
-##バックエンド
+## バックエンド
 Ruby,Ruby on Rails
 
-##フロントエンド
+## フロントエンド
 Haml,Sass,JavaScript,JQuery,Ajax
 
-##データベース
+## データベース
 MySQL,Sequel Pro
 
-##インフラ
+## インフラ
 Heroku
 
-##ソース管理
+## ソース管理
 GitHub,GitHubDesktop
 
-##テスト
+## テスト
 
 
-##エディタ
+## エディタ
 VSCode
 
 # 課題や今後実装したい機能
