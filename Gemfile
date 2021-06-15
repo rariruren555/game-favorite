@@ -69,3 +69,5 @@ gem 'mini_magick'
 gem 'jquery-rails'
 
 gem 'rails_12factor', group: :production
+
+gem 'rspec-rails', '~> 4.0.0.beta2'
